@@ -1,8 +1,24 @@
-# React + Vite
+# OAuth frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React frontend for neoG Camp's GitHub OAuth lesson. It sends you to the backend's `/auth/github` route, receives the session cookie when you come back, and shows your GitHub profile using the token.
 
-Currently, two official plugins are available:
+## Run it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Start the OAuth backend from the lesson. It must be running before you sign in.
+2. Copy `.env.example` to `.env`. It points at the backend on port 4000 and at GitHub's API.
+3. Install and start:
+
+   ```
+   npm install
+   npm run dev
+   ```
+
+4. Open the URL Vite prints and choose "Sign in with GitHub".
+
+## What to read
+
+- `src/components/Home` starts the sign-in.
+- `src/lib/axios.lib.js` holds the two API clients: your backend and GitHub's.
+- `src/components/OwnerProfile` shows the signed-in user's profile.
+
+Part of the neoG Camp curriculum.
